@@ -1,14 +1,18 @@
-export const defaultState = {
+const md5 = require('md5');
+const defaultState = {
+	/* session: {
+		authenticated: false,
+	}, */
 	users: [
 		{
 			id: 'U1',
 			name: 'Dev',
-			friends: [`U2`],
+			passwordHash: md5('tuples'),
 		},
 		{
 			id: 'U2',
 			name: 'C. Eeyo',
-			friends: [],
+			passwordHash: md5('profiting'),
 		},
 	],
 	groups: [
@@ -74,3 +78,5 @@ export const defaultState = {
 		},
 	],
 };
+
+module.exports = { defaultState };
